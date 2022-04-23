@@ -1,0 +1,60 @@
+{% extends 'wall_base_main.html' %}
+{% load static %}
+
+
+{% block content2 %}
+
+<div class="friends">
+    <div class="">Twoi znajomi</div>
+    <div class="post-container">
+    {% for i in friends %}
+        <div class="post-row">
+            <div class="user-profile">
+                <img src="{% static 'images/fb/profile-pic.png' %}">
+                <div>
+                    <p>{{i.user.first_name}} {{i.user.last_name}}</p>
+                    <span>June 21 2021, 13:40 pm</span>
+                </div>
+            </div>
+    <!--        <a href="#"><i class="fas fa-ellipsis-v"></i></a>-->
+            <div class="add-friend">
+                <a href="{% url 'delete-friend' i.user.id %}"><img src="{% static 'images/fb/delete_friend3.webp' %}"></a>
+            </div>
+
+
+        </div>
+
+    {% endfor %}
+    </div>
+</div>
+
+
+<div class="to-be-friends">
+    <div class="">Ludzie, których możesz znać</div>
+    <div class="post-container">
+    {% for i in friends_to_be %}
+    <div class="post-row">
+        <div class="user-profile">
+            <img src="{% static 'images/fb/profile-pic.png' %}">
+            <div>
+                <p>{{i.first_name}} {{i.last_name}}</p>
+                <span>June 21 2021, 13:40 pm</span>
+            </div>
+        </div>
+<!--        <a href="#"><i class="fas fa-ellipsis-v"></i></a>-->
+        <div class="add-friend">
+            <a href="{% url 'add-friend' i.id %}"><img src="{% static 'images/fb/add_friend.jpg' %}"></a>
+        </div>
+
+
+    </div>
+
+    {% endfor %}
+</div>
+
+
+</div>
+
+
+{% endblock %}
+

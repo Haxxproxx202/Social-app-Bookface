@@ -1,0 +1,82 @@
+{% extends 'wall_base_main.html' %}
+{% load static %}
+{% block content2 %}
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="write-post-container">
+        <div class="user-profile">
+            <img src="{% static 'images/fb/profile-pic.png' %}">
+            <div>
+                <p>{{user.first_name}} {{user.last_name}}</p>
+                <small>Public <i class="fas fa-caret-down"></i> </small>
+            </div>
+        </div>
+        <div class="post-input-container">
+<!--{{form.body}}-->
+            <textarea name="textarea" rows="3" placeholder="What's on your mind, {{user}}?"></textarea>
+<!--{{form.image}}-->
+            <div class="add-post-links">
+
+                <a href=""><img src="{% static 'images/fb/live-video.png' %}"> Live Video</a>
+                <a href=""><img src="{% static 'images/fb/photo.png' %}"> Photo Video</a>
+                <a href=""><img src="{% static 'images/fb/feeling.png' %}"> Feeling Activity</a>
+                <button type="submit">Upload</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% if posts %}
+{% for i in posts %}
+
+    <div class="post-container">
+                <div class="post-row">
+                    <div class="user-profile">
+                        <img src="{% static 'images/fb/profile-pic.png' %}">
+                        <div>
+                            <p>{{i.author.first_name}} {{i.author.last_name}}</p>
+                            <span>{{i.created_on}}</span>
+                        </div>
+                     </div>
+                    <a href=""><i class="fas fa-ellipsis-v"></i></a>
+                </div>
+
+                <br><p>{{i.body}}</p><br>
+                <img src="{% static 'images/fb/feed-image-1.png' %}" class="post-img">
+
+                <div class="post-row">
+                    <div class="activiti-icons">
+                        <div><form action="{% url 'like_post' i.id %}" method="POST">
+                                {% csrf_token %}
+                             <button type="submit", name="post_id", value="{{i.id}}", class="like-button">
+                                 {% if user.id in i.likes %}
+                                 <img src="{% static 'images/fb/like-blue.png' %}">
+                                 {% else %}
+                                 <img src="{% static 'images/fb/like.png' %}">
+                                 {% endif %}
+                                 {{i.likes.count}}
+                             </button>
+                             </form></div>
+                        <div class="comment-container" > <form action="{% url 'comment' i.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="comment-button"><img src="{% static 'images/fb/comments.png' %}">
+                                {{i.comment_set.count}}</button>
+
+
+                        </form></div>
+                        <div><img src="{% static 'images/fb/share.png' %}"> 0</div>
+
+                    </div>
+                    <div class="post-profile-icon">
+                        <img src="{% static 'images/fb/profile-pic.png' %}"> <i class="fas fa-caret-down"></i>
+                    </div>
+                </div>
+            </div>
+
+{% endfor %}
+{% endif %}
+
+
+
+{% endblock %}

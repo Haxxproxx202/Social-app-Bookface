@@ -1,0 +1,14 @@
+{% extends 'settings_base.html' %}
+{% load static %}
+
+
+{% block content2 %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div>{{form.as_p}}</div><br>
+    <button class="sv-button" type="submit">Apply changes</button>
+
+</form>
+
+
+{% endblock %}

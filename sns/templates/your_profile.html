@@ -1,0 +1,16 @@
+{% extends 'settings_base.html' %}
+{% load static %}
+
+
+{% block content2 %}
+
+<div class="profile_data">
+    <p>Username:<b> {{user.username}}</b></p><hr>
+    <p>Name:<b> {{user.first_name}}</b></p><hr>
+    <p>Surname:<b> {{user.last_name}}</b></p><hr>
+    <p>Email:<b> {{user.email}}</b></p><hr>
+    <p>Account creation date:<b> {{user.date_joined}}</b></p><hr>
+    <p></p>
+</div>
+
+{% endblock %}

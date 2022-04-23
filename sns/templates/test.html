@@ -1,0 +1,81 @@
+            <ul>
+                <li><img src="{% static 'images/fb/notification.png' %}"></li>
+                <li><img src="{% static 'images/fb/inbox.png' %}"></li>
+                <li><img src="{% static 'images/fb/video.png' %}"></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+
+            <div class="search-box">
+                <img src="{% static 'images/fb/search.png' %}">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+                <img src="{% static 'images/fb/profile-pic.png' %}">
+            </div>
+        </div>
+        <!---------------   settings-menu    --------------->
+        <div class="settings-menu">
+            <div id="dark-btn">
+                <span></span>
+            </div>
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img src="{% static 'images/fb/profile-pic.png' %}">
+                    <div>
+                        <p>John Nicholson</p>
+                        <a href="#">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="user-profile">
+                    <img src="{% static 'images/fb/feedback.png' %}">
+                    <div>
+                        <p>Give Feedback</p>
+                        <a href="#">Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/setting.png' %}" class="settings-icon">
+                    <a href="#">Settings % Privacy <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/help.png' %}" class="settings-icon">
+                    <a href="#">Help & Support <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/display.png' %}" class="settings-icon">
+                    <a href="#">Display & Accessibility <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/logout.png' %}" class="settings-icon">
+                    <a href="#">Logout <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!--<h1>-->
+<!--    {% block main_header %}-->
+
+
+<!--    </p>-->
+<!--    {% endblock %}-->
+<!--</h1>-->
+
+<!--{% block content %}-->
+<!--{% endblock %}-->
+
+<!--{% block footer %}-->
+<!--{% if user.is_authenticated %}-->
+<!--Zalogowany użytkownik: {{user}}-->
+<!--{% else %}-->
+<!--Niezalogowany-->
+<!--{% endif %}-->
+
+<!--{% endblock %}-->
+
+
+</body>
+</html>

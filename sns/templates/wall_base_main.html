@@ -1,0 +1,219 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookface</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <a href="{% url 'wall' %}"><img src="{% static 'images/fb/logo.png' %}" class="logo"></a>
+            <ul>
+                <li><img src="{% static 'images/fb/notification.png' %}"></li>
+                <li><img src="{% static 'images/fb/inbox.png' %}"></li>
+                <li><img src="{% static 'images/fb/video.png' %}"></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+
+            <div class="search-box">
+                <img src="{% static 'images/fb/search.png' %}">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+                <img src="{% static 'images/fb/profile-pic.png' %}">
+            </div>
+        </div>
+        <!---------------   settings-menu    --------------->
+        <div class="settings-menu">
+            <div id="dark-btn">
+                <span></span>
+            </div>
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img src="{% static 'images/fb/profile-pic.png' %}">
+                    <div>
+                        <p>{{user.first_name}} {{user.last_name}}</p>
+                        <a href="#">See your profile</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="user-profile">
+                    <img src="{% static 'images/fb/feedback.png' %}">
+                    <div>
+                        <p>Give Feedback</p>
+                        <a href="#">Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/setting.png' %}" class="settings-icon">
+                    <a href="{% url 'settings' %}">Settings % Privacy <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/help.png' %}" class="settings-icon">
+                    <a href="#">Help & Support <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/display.png' %}" class="settings-icon">
+                    <a href="#">Display & Accessibility <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+                <div class="settings-links">
+                    <img src="{% static 'images/fb/logout.png' %}" class="settings-icon">
+                    <a href="{% url 'logout' %}">Logout <img src="{% static 'images/fb/arrow.png' %}" width="10px"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+<!---------------   left-sidebar    --------------->
+        <div class="left-sidebar">
+            <div class="imp-links">
+                <a href="{% url 'wall' %}"><img src="{% static 'images/fb/news.png' %}"> Latest News</a>
+                <a href="{% url 'friends' %}"><img src="{% static 'images/fb/friends.png' %}"> Friends</a>
+                <a href="#"><img src="{% static 'images/fb/group.png' %}"> Group</a>
+                <a href="#"><img src="{% static 'images/fb/marketplace.png' %}"> Marketplace</a>
+                <a href="#"><img src="{% static 'images/fb/watch.png' %}"> Watch</a>
+                <a href="#">See More</a>
+            </div>
+            <div class="shortcut-links">
+                <p>Your Shortcuts</p>
+                <a href="#"><img src="{% static 'images/fb/shortcut-1.png' %}"> Web Developers</a>
+                <a href="#"><img src="{% static 'images/fb/shortcut-2.png' %}"> Web Design course</a>
+                <a href="#"><img src="{% static 'images/fb/shortcut-3.png' %}"> Full Stack Development</a>
+                <a href="#"><img src="{% static 'images/fb/shortcut-4.png' %}"> Website Experts</a>
+            </div>
+            Zalogowany: {{user}}
+        </div>
+
+
+<!---------------   main-content    --------------->
+        <div class="main-content">
+            <div class="story-gallery">
+                <div class="story story1">
+                    <img src="{% static 'images/fb/upload.png' %}">
+                    <p>Post Story</p>
+                </div>
+                <div class="story story2">
+                    <img src="{% static 'images/fb/member-1.png' %}">
+                    <p>Amanta</p>
+                </div>
+                <div class="story story3">
+                    <img src="{% static 'images/fb/member-2.png' %}">
+                    <p>Jackson</p>
+                </div>
+                <div class="story story4">
+                    <img src="{% static 'images/fb/member-3.png' %}">
+                    <p>Samona</p>
+                </div>
+                <div class="story story5">
+                    <img src="{% static 'images/fb/member-4.png' %}">
+                    <p>John Doe</p>
+                </div>
+            </div>
+
+
+            {% block content2 %}
+            {% endblock %}
+        </div>
+<!---------------   right-sidebar    --------------->
+        <div class="right-sidebar">
+
+            <div class="sidebar-title">
+                <h4>Events</h4>
+                <a href="#">See All</a>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+
+                <div class="right-event">
+                    <h4>Social Meda</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Willson Tech Park</p>
+                    <a href="">More Info</a>
+                </div>
+            </div>
+            <div class="event">
+                <div class="left-event">
+                    <h3>22</h3>
+                    <span>June</span>
+                </div>
+
+                <div class="right-event">
+                    <h4>Mobile Marketing</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Willson Tech Park</p>
+                    <a href="">More Info</a>
+                </div>
+            </div>
+            <div class="sidebar-title">
+                <h4>Advertisement</h4>
+                <a href="#">Close</a>
+            </div>
+            <img src="{% static 'images/fb/advertisement.png' %}" class="sidebar-aaddss">
+            <div class="sidebar-title">
+                <h4>Conversation</h4>
+                <a href="#">Hide Chat</a>
+            </div>
+
+            <div class="online-list">
+                <div class="online">
+                    <img src="{% static 'images/fb/member-1.png' %}">
+                </div>
+                <p>Aleksandra Kowalska</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="{% static 'images/fb/member-2.png' %}">
+                </div>
+                <p>Michał Kapusta</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="{% static 'images/fb/member-3.png' %}">
+                </div>
+                <p>Samanta Olszewska</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <p>Copyright 2022 - Przemysław Janecki</p>
+    </div>
+
+<!--<h1>-->
+<!--    {% block main_header %}-->
+
+
+<!--    </p>-->
+<!--    {% endblock %}-->
+<!--</h1>-->
+
+<!--{% block content %}-->
+<!--{% endblock %}-->
+<!--<div class="logintext">-->
+<!--    ds-->
+<!--    {% block footer %}-->
+<!--{% if user.is_authenticated %}-->
+<!--Zalogowany użytkownik: {{user}}-->
+<!--{% else %}-->
+<!--Niezalogowany-->
+<!--{% endif %}-->
+
+<!--{% endblock %}-->
+
+</div>
+
+
+
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

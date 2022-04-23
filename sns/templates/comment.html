@@ -1,0 +1,22 @@
+{% extends 'wall_base_main.html' %}
+{% load static %}
+
+
+{% block content2 %}
+{{error}}
+<div class="comment-field">
+    <form action="" method="POST">
+        {% csrf_token %}
+    <textarea name="text" placeholder="Drop your comment..."></textarea>
+
+    <input type="submit" value="Upload" />
+    </form>
+
+</div>
+<div class="comments-window">
+    {% for i in comments %}
+    <div>{{i.author.first_name}} {{i.author.last_name}}</div>
+    <p>{{i.content}}</p>
+    {% endfor %}
+</div>
+{% endblock %}
