@@ -79,7 +79,7 @@
                 <a href="{% url 'friends' %}"><img src="{% static 'images/fb/friends.png' %}"> Friends</a>
                 <a href="#"><img src="{% static 'images/fb/group.png' %}"> Group</a>
                 <a href="#"><img src="{% static 'images/fb/marketplace.png' %}"> Marketplace</a>
-                <a href="#"><img src="{% static 'images/fb/watch.png' %}"> Watch</a>
+                <a href="{% url 'games' %}"><img src="{% static 'images/fb/watch.png' %}"> Play</a>
                 <a href="#">See More</a>
             </div>
             <div class="shortcut-links">
@@ -125,9 +125,9 @@
 <!---------------   right-sidebar    --------------->
         <div class="right-sidebar">
 
-            <div class="sidebar-title">
+            <div class="sidebar-title3">
                 <h4>Events</h4>
-                <a href="#">See All</a>
+                <p>See All</p>
             </div>
 
             <div class="event">
@@ -156,32 +156,34 @@
             </div>
             <div class="sidebar-title">
                 <h4>Advertisement</h4>
-                <a href="#">Close</a>
+                <p>Close</p>
             </div>
             <img src="{% static 'images/fb/advertisement.png' %}" class="sidebar-aaddss">
-            <div class="sidebar-title">
+            <div class="sidebar-title2">
                 <h4>Conversation</h4>
-                <a href="#">Hide Chat</a>
+                <p>Hide Chat</p>
+            </div>
+            <div class="conversation-window">
+                <div class="online-list">
+                    <div class="online">
+                        <img src="{% static 'images/fb/member-1.png' %}">
+                    </div>
+                    <p>Aleksandra Kowalska</p>
+                </div>
+                <div class="online-list">
+                    <div class="online">
+                        <img src="{% static 'images/fb/member-2.png' %}">
+                    </div>
+                    <p>Michał Kapusta</p>
+                </div>
+                <div class="online-list">
+                    <div class="online">
+                        <img src="{% static 'images/fb/member-3.png' %}">
+                    </div>
+                    <p>Samanta Olszewska</p>
+                </div>
             </div>
 
-            <div class="online-list">
-                <div class="online">
-                    <img src="{% static 'images/fb/member-1.png' %}">
-                </div>
-                <p>Aleksandra Kowalska</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="{% static 'images/fb/member-2.png' %}">
-                </div>
-                <p>Michał Kapusta</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="{% static 'images/fb/member-3.png' %}">
-                </div>
-                <p>Samanta Olszewska</p>
-            </div>
         </div>
     </div>
 

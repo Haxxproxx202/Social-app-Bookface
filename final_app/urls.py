@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from sns.views import MainView, LoginView, LogoutView, RegisterView, WallView, SettingsView, FriendsView, \
-                        AddFriendView, LikeView, DeleteFriendView, ChangePasswordView, EditProfileView, \
-                        ProfileView, CommentView
+                        add_friend_view, like_view, delete_friend_view, ChangePasswordView, EditProfileView, \
+                        ProfileView, CommentView, play_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,12 +30,13 @@ urlpatterns = [
     path('register/', RegisterView.as_view(), name="register"),
     path('settings/', SettingsView.as_view(), name="settings"),
     path('friends/', FriendsView.as_view(), name="friends"),
-    path('add_friend/<int:id_>/', AddFriendView, name="add-friend"),
-    path('delete_friend/<int:id_>/', DeleteFriendView, name="delete-friend"),
-    path('like/<int:pk>', LikeView, name='like_post'),
+    path('add_friend/<int:id_>/', add_friend_view, name="add-friend"),
+    path('delete_friend/<int:id_>/', delete_friend_view, name="delete-friend"),
+    path('like/<int:pk>', like_view, name='like_post'),
     path('settings/profile/', ProfileView.as_view(), name="profile"),
     path('settings/edit/', EditProfileView.as_view(), name="edit-profile"),
     path('settings/pw/', ChangePasswordView.as_view(), name="change-pw"),
     path('comment/<int:id>/', CommentView.as_view(), name="comment"),
+    path('play/', play_view, name='games'),
 
 ]

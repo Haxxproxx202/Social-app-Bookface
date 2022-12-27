@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.forms import ModelForm
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import View
@@ -29,11 +28,19 @@ class MainView(View):
 #         posts = Post.objects.order_by("-created_on")
 #         context = super(WallView, self).get_context_data(**kwargs)
 #         context['posts'] = posts
-#
 #         return context
+#
+#     def form_valid(self, form):
+#         body = form.cleaned_data['body']
+#         image = form.cleaned_data['image']
+#         user = User.objects.get(id=self.request.user.id)
+#
+#         Post.objects.create(author=user, body=body, image=image)
+#         return redirect(self.success_url)
 
 
-class WallView(LoginRequiredMixin, View):
+# class WallView(LoginRequiredMixin, View):
+class WallView(LoginRequiredMixin ,View):
     """ Shows the wall of the site """
     def get(self, request):
         posts = Post.objects.order_by("-created_on")
@@ -53,17 +60,16 @@ class LoginView(FormView):
     """ Lets to log into the social service"""
     form_class = LoginForm
     template_name = "login.html"
+    success_url = reverse_lazy("wall")
 
     def form_valid(self, form):
         user = authenticate(username=form.cleaned_data['name'],
                             password=form.cleaned_data['pw'])
-
         if user is not None:
             login(self.request, user)
+            return redirect(self.success_url)
         else:
-            ctx = {"error_message": "BŁĄD"}
             return redirect(reverse_lazy('login'))
-        return redirect(reverse("wall"))
 
 
 class LogoutView(FormView):
@@ -74,18 +80,18 @@ class LogoutView(FormView):
 
 
 class RegisterView(FormView):
-    """ Register a new member """
+    """ Registers a new member """
     form_class = RegisterForm
     template_name = 'register.html'
     success_url = reverse_lazy('wall')
 
     def form_valid(self, form):
-        username = form.cleaned_data['username']
         name = form.cleaned_data['first_name']
         surname = form.cleaned_data['last_name']
         pw = form.cleaned_data['password']
         email = form.cleaned_data['email']
-        new_user = User.objects.create_user(username=username,
+        print(email)
+        new_user = User.objects.create_user(username=email,
                                             first_name=name,
                                             last_name=surname,
                                             password=pw,
@@ -93,6 +99,7 @@ class RegisterView(FormView):
 
         new_user_extend = ExtendUser.objects.create(user=new_user)
         login(self.request, new_user)
+        # return redirect(self.success_url)
 
         return super().form_valid(form)
 
@@ -155,7 +162,7 @@ class FriendsView(View):
         return render(request, 'friends.html', {"friends_to_be": friends_to_be, "friends": friends})
 
 
-def AddFriendView(request, id_):
+def add_friend_view(request, id_):
     """ Adds a person to friends """
     logged_user = User.objects.get(pk=request.user.id)
     added_user = User.objects.get(pk=id_)
@@ -165,7 +172,7 @@ def AddFriendView(request, id_):
     return redirect("friends")
 
 
-def DeleteFriendView(request, id_):
+def delete_friend_view(request, id_):
     """ Deletes a given person from friends """
     logged_user = User.objects.get(pk=request.user.id)
     deleted_user = User.objects.get(pk=id_)
@@ -176,8 +183,8 @@ def DeleteFriendView(request, id_):
     return redirect("friends")
 
 
-def LikeView(request, pk):
-    """ Increases or decreases number of likes """
+def like_view(request, pk):
+    """ Increases or decreases the number of likes """
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     # liked = False
     if post.likes.filter(id=request.user.id).exists():
@@ -209,3 +216,7 @@ class CommentView(LoginRequiredMixin, FormView):
 
             error = "Fill out the comment input"
             return render(request, 'comment.html', {'error': error})
+
+def play_view(request):
+    return render(request, 'play.html')
+

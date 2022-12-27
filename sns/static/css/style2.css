@@ -257,20 +257,23 @@ button_log:hover {
     font-weight: 500;
     text-align: left;
 }
-.sidebar-title{
+.sidebar-title, .sidebar-title2, .sidebar-title3{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 18px;
 }
+
 .right-sidebar h4{
     font-weight: 600;
     font-size: 16px;
 }
-.sidebar-title a{
+.sidebar-title p, .sidebar-title2 p, .sidebar-title3 p{
     text-decoration: none;
     color: #1876f2;
     font-size: 12px;
+    cursor: pointer;
+    text-align: right;
 }
 .event{
     display: flex;
@@ -641,4 +644,5 @@ button_log:hover {
     font-family: "Padauk Book";
     cursor: pointer;
 }
+
 

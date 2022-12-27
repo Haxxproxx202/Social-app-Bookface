@@ -15,7 +15,7 @@
         </div>
         <div class="post-input-container">
 <!--{{form.body}}-->
-            <textarea name="textarea" rows="3" placeholder="What's on your mind, {{user}}?"></textarea>
+            <textarea name="textarea" rows="3" placeholder="What's on your mind, {{user.first_name}}?"></textarea>
 <!--{{form.image}}-->
             <div class="add-post-links">
 
@@ -50,7 +50,7 @@
                         <div><form action="{% url 'like_post' i.id %}" method="POST">
                                 {% csrf_token %}
                              <button type="submit", name="post_id", value="{{i.id}}", class="like-button">
-                                 {% if user.id in i.likes %}
+                                 {% if request.user.id in i.likes %}
                                  <img src="{% static 'images/fb/like-blue.png' %}">
                                  {% else %}
                                  <img src="{% static 'images/fb/like.png' %}">
