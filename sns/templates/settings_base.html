@@ -72,6 +72,7 @@
         </div>
     </nav>
     <div class="container">
+
 <!---------------   left-sidebar    --------------->
         <div class="left-sidebar">
             <div class="imp-links">
@@ -81,16 +82,11 @@
                 <a href="#"><img src="{% static 'images/fb/arrow2.jpeg' %}"> Privacy</a>
                 <a href="#" style="color: #000000"><img src="{% static 'images/fb/arrow2.jpeg' %}"> Black list</a>
             </div>
-
-            Zalogowany: {{user}}
         </div>
 
 
 <!---------------   main-content    --------------->
         <div class="main-content">
-
-
-
             {% block content2 %}
             {% endblock %}
         </div>
