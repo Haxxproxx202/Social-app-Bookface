@@ -6,13 +6,13 @@
             {% csrf_token %}
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Login</div><br>
+                    <div class="panel-heading"><b>Login page</b></div><br>
                     <div class="panel-body">
                         {% if error_message %}
                             <p class="bg-danger p-d ml-b">{{ error_message }}</p>
                         {% endif %}
                         <div class="form-group clearfix">
-                            <label for="username" class="col-md-4 control-label text-right">Username:</label>
+                            <label for="username" class="col-md-4 control-label text-right">E-mail:</label>
                             <div class="col-md-6">
                                 {{form.name}}
                             </div>
@@ -24,7 +24,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-md-offset-4">
-                            <input name="login" type="submit" value="Login" class="btn btn-success" /> &nbsp;
+                            <input name="login" type="submit" value="Sign in" class="btn btn-success" /> &nbsp;
                             <a href="{% url 'register' %}">or Register</a>
                         </div>
                     </div>

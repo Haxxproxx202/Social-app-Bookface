@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import View
-from .forms import LoginForm, RegisterForm, AddPostForm, ProfileForm, ChangePassword, CommentForm
+from .forms import LoginForm, RegisterForm, ProfileForm, ChangePassword
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
@@ -142,7 +142,6 @@ class ChangePasswordView(LoginRequiredMixin, FormView):
         user = get_object_or_404(User, id=self.request.user.id)
         user.set_password(form.cleaned_data['pw1'])
         user.save()
-
         update_session_auth_hash(self.request, user)
         return redirect(self.success_url)
 
@@ -186,36 +185,31 @@ def delete_friend_view(request, id_):
 def like_view(request, pk):
     """ Increases or decreases the number of likes """
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    # liked = False
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
-        # liked = False
     else:
         post.likes.add(request.user)
-        # liked = True
 
     return HttpResponseRedirect('/wall/')
 
 
 class CommentView(LoginRequiredMixin, FormView):
     """ Adds a comment to database """
-    def get(self, request, id):
-        comments = Comment.objects.filter(post=id)
+    def get(self, request, id_):
+        comments = Comment.objects.filter(post=id_)
         return render(request, 'comment.html', {'comments': comments})
 
-    def post(self, request, id):
+    def post(self, request, id_):
         text = request.POST.get('text')
         if text:
-
-            post = Post.objects.get(id=id)
+            post = Post.objects.get(id=id_)
             user = User.objects.get(id=request.user.id)
             Comment.objects.create(author=user, content=text, post=post)
-
             return redirect("wall")
         else:
-
             error = "Fill out the comment input"
             return render(request, 'comment.html', {'error': error})
+
 
 def play_view(request):
     return render(request, 'play.html')

@@ -36,7 +36,7 @@ urlpatterns = [
     path('settings/profile/', ProfileView.as_view(), name="profile"),
     path('settings/edit/', EditProfileView.as_view(), name="edit-profile"),
     path('settings/pw/', ChangePasswordView.as_view(), name="change-pw"),
-    path('comment/<int:id>/', CommentView.as_view(), name="comment"),
+    path('comment/<int:id_>/', CommentView.as_view(), name="comment"),
     path('play/', play_view, name='games'),
 
 ]
