@@ -38,5 +38,4 @@ urlpatterns = [
     path('settings/pw/', ChangePasswordView.as_view(), name="change-pw"),
     path('comment/<int:id_>/', CommentView.as_view(), name="comment"),
     path('play/', play_view, name='games'),
-
 ]

@@ -8,8 +8,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 from .models import Post, ExtendUser, Comment
-
-# Create your views here.
 from django.views.generic import FormView, CreateView, UpdateView, TemplateView
 
 
@@ -19,28 +17,7 @@ class MainView(View):
         return render(request, 'main.html')
 
 
-# class WallView(FormView):
-#     template_name = "wall_action.html"
-#     form_class = AddPostForm
-#     success_url = reverse_lazy("wall")
-#
-#     def get_context_data(self, **kwargs):
-#         posts = Post.objects.order_by("-created_on")
-#         context = super(WallView, self).get_context_data(**kwargs)
-#         context['posts'] = posts
-#         return context
-#
-#     def form_valid(self, form):
-#         body = form.cleaned_data['body']
-#         image = form.cleaned_data['image']
-#         user = User.objects.get(id=self.request.user.id)
-#
-#         Post.objects.create(author=user, body=body, image=image)
-#         return redirect(self.success_url)
-
-
-# class WallView(LoginRequiredMixin, View):
-class WallView(LoginRequiredMixin ,View):
+class WallView(LoginRequiredMixin, View):
     """ Shows the wall of the site """
     def get(self, request):
         posts = Post.objects.order_by("-created_on")
@@ -99,7 +76,6 @@ class RegisterView(FormView):
 
         new_user_extend = ExtendUser.objects.create(user=new_user)
         login(self.request, new_user)
-        # return redirect(self.success_url)
 
         return super().form_valid(form)
 
@@ -213,4 +189,3 @@ class CommentView(LoginRequiredMixin, FormView):
 
 def play_view(request):
     return render(request, 'play.html')
-

@@ -10,6 +10,7 @@ REACTIONS = (
     (6, "angry")
 )
 
+
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -18,6 +19,7 @@ class Post(models.Model):
     image = models.ImageField(blank=True, null=True, upload_to="uploaded/")
     likes = models.ManyToManyField(User, related_name="likes_post")
 
+
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.CharField(max_length=100)
@@ -25,9 +27,11 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     votes = models.IntegerField(default=0)
 
+
 class Friend(models.Model):
     users = models.ManyToManyField(User)
     is_confirmed = models.BooleanField(default=False)
+
 
 class ExtendUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
