@@ -29,8 +29,7 @@ from .models import Post, User
 #     response = c.get('/settings/')
 #     assert response.status_code == 200
 
-
 @pytest.mark.django_db
-def test_User():
+def test_user():
     user1 = Post.objects.get(id=1)
-    assert user1.body == "Jak się macie, Kalafiory?"
+    assert user1.body == "Jak się macie?"
