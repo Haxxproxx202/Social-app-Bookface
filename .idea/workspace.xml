@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37ee2701-1b18-4806-bb57-628505393302" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/final_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/final_app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/sns/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sns/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677957883816</updated>
       <workItem from="1677957884895" duration="17000" />
-      <workItem from="1678037000336" duration="5541000" />
+      <workItem from="1678037000336" duration="6286000" />
     </task>
     <servers />
   </component>
