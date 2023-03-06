@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="37ee2701-1b18-4806-bb57-628505393302" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_app/.env" beforeDir="false" afterPath="$PROJECT_DIR$/final_app/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/sns/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sns/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sns/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sns/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -80,7 +76,8 @@
       <option name="presentableId" value="Default" />
       <updated>1677957883816</updated>
       <workItem from="1677957884895" duration="17000" />
-      <workItem from="1678037000336" duration="7324000" />
+      <workItem from="1678037000336" duration="7950000" />
+      <workItem from="1678117652852" duration="2619000" />
     </task>
     <servers />
   </component>
