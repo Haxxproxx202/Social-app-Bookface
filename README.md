@@ -1,7 +1,5 @@
 # Socialbook 
 
-
-
 Welcome to my first 'serious' app, which is a social networking service that resembles 'Facebook' to some extent.
 Although there's still plenty of work to be done on it, unfortunately, I haven't had much time recently to improve
 its appearance and functionality. Despite that, the app has all the necessary functionalities to work, such as:
@@ -16,12 +14,10 @@ its appearance and functionality. Despite that, the app has all the necessary fu
 
 Further development of this app is to be continued...
 
----
-
 - I added this project here with only one main commit and push as I was still learning and not very familiar with GitHub at the time.
 
----
-
+## Prerequisites
+- Python 3.9 or higher
 ## Installation
 1. Clone the repository.
 
@@ -46,12 +42,11 @@ python3 manage.py createsuperuser
 ```bash
 python3 manage.py runserver
 ```
----
+## Technology Used
+- Python/Django
+- Vanilla JS
+- PostgreSQL
 
 ## Visuals
-Photos of this project are available [here](https://photos.app.goo.gl/rbEup1xe6gA5TGyGA).
-
----
-
-### Enjoy!
-
+Photos of this project are available [here](https://photos.app.goo.gl/rbEup1xe6gA5TGyGA
+"Google Photos album").

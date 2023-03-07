@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="37ee2701-1b18-4806-bb57-628505393302" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/haxxproxx/Desktop/prework/8_django_advanced/final_app",
+    "last_opened_file_path": "/home/haxxproxx/Desktop/prework/portfoliolab",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,7 +76,8 @@
       <updated>1677957883816</updated>
       <workItem from="1677957884895" duration="17000" />
       <workItem from="1678037000336" duration="7950000" />
-      <workItem from="1678117652852" duration="2619000" />
+      <workItem from="1678117652852" duration="3945000" />
+      <workItem from="1678209282218" duration="93000" />
     </task>
     <servers />
   </component>
